@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="mbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9C5951"/>
+      <stop offset="50%" stop-color="#8C4E46"/>
+      <stop offset="100%" stop-color="#6F3730"/>
+    </linearGradient>
+
+    <!-- Gold Accent Gradient -->
+    <linearGradient id="goldShimmer" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F2D8B3"/>
+      <stop offset="50%" stop-color="#FFE8CE"/>
+      <stop offset="100%" stop-color="#DFB786"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle Rounded Tile -->
+  <rect x="16" y="16" width="480" height="480" rx="128" fill="url(#mbBg)"/>
+  
+  <!-- Subtle Inner Border Frame -->
+  <rect x="28" y="28" width="456" height="456" rx="116" fill="none" stroke="url(#goldShimmer)" stroke-width="3" stroke-opacity="0.35"/>
+
+  <!-- Decorative Delicate Corner Accent Rings -->
+  <circle cx="256" cy="256" r="196" fill="none" stroke="url(#goldShimmer)" stroke-width="1.5" stroke-opacity="0.2" stroke-dasharray="8 6"/>
+
+  <!-- Central Emblem: Sculpted Luxury Monogram 'M' -->
+  <g transform="translate(0, -6)">
+    <!-- High-res Clean Unified Vector 'M' Path -->
+    <path d="M 152 344 C 158 344 162 341 162 334 L 162 186 C 162 178 158 175 152 175 L 142 175 L 142 162 L 184 162 L 256 296 L 328 162 L 370 162 L 370 175 L 360 175 C 354 175 350 178 350 186 L 350 334 C 350 341 354 344 360 344 L 370 344 L 370 356 L 332 356 L 332 344 L 340 344 C 344 344 346 342 346 336 L 346 204 L 270 348 L 242 348 L 166 204 L 166 336 C 166 342 168 344 172 344 L 180 344 L 180 356 L 142 356 L 142 344 Z" fill="#FFFFFF"/>
+
+    <!-- Gold Calligraphic Shading Overlay on Center Apex -->
+    <path d="M 256 296 L 242 348 L 270 348 Z" fill="url(#goldShimmer)"/>
+
+    <!-- Refined Esthetic Sparkle / Star Emblem at Top Right -->
+    <g transform="translate(352, 136) scale(0.9)">
+      <path d="M 0 -28 Q 0 0 28 0 Q 0 0 0 28 Q 0 0 -28 0 Q 0 0 0 -28 Z" fill="url(#goldShimmer)"/>
+      <circle cx="0" cy="0" r="3" fill="#FFFFFF"/>
+    </g>
+    
+    <!-- Mini Secondary Shimmer Star at Bottom Left -->
+    <g transform="translate(138, 368) scale(0.45)">
+      <path d="M 0 -28 Q 0 0 28 0 Q 0 0 0 28 Q 0 0 -28 0 Q 0 0 0 -28 Z" fill="url(#goldShimmer)"/>
+    </g>
+  </g>
+
+  <!-- Discreet Brand Arc at the base -->
+  <text x="256" y="416" font-family="'Plus Jakarta Sans', 'Cinzel', 'Playfair Display', serif, sans-serif" font-size="28" font-weight="700" letter-spacing="9" fill="url(#goldShimmer)" text-anchor="middle">
+    MARCABELLA
+  </text>
+  <text x="256" y="438" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="500" letter-spacing="4" fill="#F8E5D0" opacity="0.85" text-anchor="middle">
+    BEAUTY &amp; ESTHETICS
+  </text>
+</svg>

@@ -1,0 +1,42 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Profissionais: leitura pública para carregar agenda, escrita liberada para demo/gerenciamento
+    match /professionals/{professionalId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Serviços: leitura pública da vitrine da profissional
+    match /services/{serviceId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Disponibilidade da profissional
+    match /availabilities/{availId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Agendamentos: cliente pode criar sem login; profissional e admin podem ler e atualizar
+    match /bookings/{bookingId} {
+      allow read: if true;
+      allow create: if true;
+      allow update: if true;
+      allow delete: if true;
+    }
+    
+    // Pagamentos e sinais
+    match /payments/{paymentId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Suporte para o administrador
+    match /support_tickets/{ticketId} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Marcabella",
+  "description": "Plataforma de agendamento online inteligente para manicures, lash designers, cabeleireiras e esteticistas.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

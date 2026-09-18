@@ -1,0 +1,77 @@
+{
+  "entities": {
+    "Professional": {
+      "title": "Professional",
+      "description": "Profissional autônoma de beleza e estética",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "slug": { "type": "string" },
+        "category": { "type": "string" },
+        "phone": { "type": "string" },
+        "bio": { "type": "string" },
+        "address": { "type": "string" },
+        "pixKey": { "type": "string" },
+        "pixKeyType": { "type": "string" },
+        "cancellationHours": { "type": "number" },
+        "cancellationPolicy": { "type": "string" },
+        "status": { "type": "string", "enum": ["active", "inactive"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "slug", "phone", "status"]
+    },
+    "Service": {
+      "title": "Service",
+      "description": "Serviço oferecido pela profissional",
+      "type": "object",
+      "properties": {
+        "professionalId": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "durationMinutes": { "type": "number" },
+        "price": { "type": "number" },
+        "requiresDeposit": { "type": "boolean" },
+        "depositType": { "type": "string", "enum": ["fixed", "percentage"] },
+        "depositValue": { "type": "number" },
+        "active": { "type": "boolean" }
+      },
+      "required": ["professionalId", "name", "durationMinutes", "price", "requiresDeposit", "active"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "Agendamento de horário feito pela cliente",
+      "type": "object",
+      "properties": {
+        "professionalId": { "type": "string" },
+        "serviceId": { "type": "string" },
+        "serviceName": { "type": "string" },
+        "serviceDuration": { "type": "number" },
+        "clientName": { "type": "string" },
+        "clientPhone": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "status": { "type": "string", "enum": ["confirmed", "cancelled", "completed"] },
+        "totalPrice": { "type": "number" },
+        "depositAmount": { "type": "number" },
+        "depositPaid": { "type": "boolean" },
+        "paymentMethod": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["professionalId", "serviceId", "clientName", "clientPhone", "date", "time", "status", "totalPrice"]
+    }
+  },
+  "firestore": {
+    "/professionals/{professionalId}": {
+      "schema": { "$ref": "#/entities/Professional" },
+      "description": "Perfis das profissionais"
+    },
+    "/services/{serviceId}": {
+      "schema": { "$ref": "#/entities/Service" },
+      "description": "Serviços disponíveis"
+    },
+    "/bookings/{bookingId}": {
+      "schema": { "$ref": "#/entities/Booking" },
+      "description": "Agendamentos efetuados"
+    }
+  }
+}
