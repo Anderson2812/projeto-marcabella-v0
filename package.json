@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "rm -rf dist .next && NODE_ENV=production next build && ln -sfn dist .next",
+    "build": "rm -rf dist .next && NODE_ENV=production next build",
     "start": "node server.ts",
     "lint": "tsc --noEmit",
     "clean": "next clean"
