@@ -34,7 +34,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 try {
                   var saved = localStorage.getItem('bellahora_theme_mode');
                   var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  if (saved === 'dark' || (!saved && prefersDark)) {
+                  var isDark = saved === 'dark' || (!saved ? prefersDark : false);
+                  if (isDark) {
                     document.documentElement.classList.add('dark');
                   } else {
                     document.documentElement.classList.remove('dark');
